@@ -1,0 +1,12 @@
+@use '../../../assets/scss/functions.scss' as *;
+
+.headerPage {
+  height: toRem(155);
+  background-color: var(--blackGreen);
+  &-pictures {
+    height: 100%;
+  }
+  img {
+    height: 100%;
+  }
+}
