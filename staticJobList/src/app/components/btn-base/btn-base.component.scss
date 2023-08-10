@@ -1,0 +1,27 @@
+.btnBase{
+  display: flex;
+  align-items: center;
+  width: max-content;
+  background-color: var(--lightGreen);
+  border-radius: var(--radius-min, .4rem);
+  overflow: hidden;
+  cursor: pointer;
+  &-text{
+    color: var(--letterFocus);
+    font-weight: 600;
+    padding: .5rem .8rem;
+    display: block;
+  }
+  &-wrapperIcon{
+    background-color: var(--blackGreen);
+    height: 100%;
+    padding:1rem;
+    &:hover{
+      color: black;
+    }
+  }
+  &-icon{
+    width: .5rem;
+    scale: 2;
+  }
+}

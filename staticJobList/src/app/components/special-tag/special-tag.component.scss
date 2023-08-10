@@ -1,0 +1,18 @@
+.wrapperTag{
+  background-color: white;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  &-tag{
+    width: max-content;
+    border-radius: .9rem;
+    padding: .2rem .6rem;
+    font-weight: 600;
+    &:nth-child(1){
+      background-color: var(--letterFocus, #5da5a2);
+    }
+      &:nth-child(2){
+        background-color: var(--letterPrimary, #2e3736);
+      }
+  }
+}

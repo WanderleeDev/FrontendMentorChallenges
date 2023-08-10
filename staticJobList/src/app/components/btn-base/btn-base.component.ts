@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-btn-base',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./btn-base.component.scss']
 })
 export class BtnBaseComponent {
-
+  @Input() btnImage = '';
+  @Input() textBtn = 'Default'; 
 }

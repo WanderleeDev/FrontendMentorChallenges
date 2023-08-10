@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class NavFilterComponent {
   itemList = ['Frontend', 'CSS', 'JavaScript']
+  iconBtn = '../../../assets/images/icon-remove.svg'
 }

@@ -1,8 +1,7 @@
 <nav class="nav">
   <ul class="nav-list">
     <li class="nav-item" *ngFor="let item of itemList">
-      <span>{{item}}</span>
-      <button>X</button>
+      <app-btn-base [btnImage]="iconBtn" [textBtn]="item"></app-btn-base>
     </li>
   </ul>
   <button type="button" class="nav-btn">

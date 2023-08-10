@@ -1,3 +1,8 @@
-<button type="button" class="nav-btn">
-  Clear
+<button type="button" class="btnBase">
+  <span class="btnBase-text">
+    {{textBtn}}
+  </span>
+  <div *ngIf="btnImage" class="btnBase-wrapperIcon">
+    <img class="btnBase-icon" [src]="btnImage" alt="icon close">
+  </div>
 </button>

@@ -1,0 +1,86 @@
+@use '../../../assets/scss/functions.scss' as *;
+
+.cardJob {
+  width: min(90%, toRem(1110));
+  margin-inline: auto;
+  padding: 1rem 2rem;
+  padding-top: toRem(30);
+  position: relative;
+  border-radius: var(--radius-min, .4rem);
+  background-color: #fff;
+  @media screen and (min-width:toRem(700)){
+    padding-top: 1rem;
+  }
+  &-header {
+    display: flex;
+    flex-flow: column wrap;
+    gap: .8rem;
+    @media screen and (min-width:toRem(700)){
+      align-content: center;
+      flex-flow: row wrap;
+    }
+  }
+  &-img {
+    position: absolute;
+    width: toRem(50);
+    aspect-ratio: 1/1;
+    top: 0;
+    transform: translateY(-50%);
+    @media screen and (min-width:toRem(700)){
+      width: toRem(90);
+      position: initial;
+      transform: initial;
+    }
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    gap: .8rem;
+    @media screen and (min-width:toRem(700)){
+      gap:  .3rem 0;
+    }
+  }
+  &-titleWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+  &-title {
+    font-weight: 600;
+    color: var(--letterFocus, #5da5a2);
+  }
+  &-subTitle {
+    color: var(--letterPrimary, #2e3736);
+    font-weight: 600;
+  }
+  &-wrapperTags {
+    display: flex;
+    gap: 2rem;
+    font-weight: 600;
+    color: var(--letterSecondary, #929c9d);
+  }
+  &-tag {
+    &:nth-of-type(1n + 2) {
+      list-style: disc;
+      &::marker{
+        color: #929c9d9c;
+        padding-left: .5rem;
+      }      
+    }
+  }
+
+  &-filterBtns {
+    border-top: solid 1px var(--letterSecondary);
+    display: flex;
+    gap: 1rem;
+    flex-flow: row wrap;
+    padding-block: 1rem;
+    @media screen and (min-width:toRem(700)){
+      border-top: initial;
+    }
+  }
+}
+
