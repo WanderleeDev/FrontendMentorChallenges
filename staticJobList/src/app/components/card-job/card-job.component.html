@@ -3,20 +3,22 @@
     <img class="cardJob-img" src="../../../assets/images/faceit.svg" alt="job-logo">
     <div class="cardJob-content">
       <div class="cardJob-titleWrapper">
-        <h2 class="cardJob-title">Photosnap</h2>
+        <h2 class="cardJob-title">{{job.company}}</h2>
         <app-special-tag></app-special-tag>
       </div>
-      <h3 class="cardJob-subTitle">Senior Frontend Developer</h3>
+      <h3 class="cardJob-subTitle">{{job.position}}</h3>
       <ul class="cardJob-wrapperTags">
-        <li class="cardJob-tag" *ngFor="let metTag of metaTagList">
+        <li class="cardJob-tag"
+          *ngFor="let metTag of [job.postedAt, job.contract, job.location]">
           {{metTag}}
         </li>
       </ul>
     </div>
   </header>
-  <footer>    
+  <footer>
     <div class="cardJob-filterBtns">
-      <app-btn-base [textBtn]="btn" *ngFor="let btn of btnTag"></app-btn-base>
+      <app-btn-base [textBtn]="btn"
+        *ngFor="let btn of btnTagList" />
     </div>
   </footer>
 </article>
