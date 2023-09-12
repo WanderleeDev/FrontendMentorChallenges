@@ -15,5 +15,6 @@ export class GalleryJobComponent implements OnInit{
   ngOnInit(): void {
     this.jobList = this.jobDataService.getJobs()
   }
+
 }
 

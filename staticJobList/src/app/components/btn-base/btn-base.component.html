@@ -1,8 +1,14 @@
-<button type="button" class="btnBase">
+<button type="button"
+  class="btnBase"
+  (click)="remove(textBtn)">
   <span class="btnBase-text">
     {{textBtn}}
   </span>
-  <div *ngIf="btnImage" class="btnBase-wrapperIcon">
-    <img class="btnBase-icon" [src]="btnImage" alt="icon close">
+  <div *ngIf="btnImage"
+    class="btnBase-wrapperIcon"
+    >
+    <img class="btnBase-icon"
+      [src]="btnImage"
+      alt="icon close">
   </div>
 </button>

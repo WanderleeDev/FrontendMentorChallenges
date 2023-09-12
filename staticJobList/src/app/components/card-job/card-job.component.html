@@ -1,12 +1,18 @@
 <article class="cardJob">
   <header class="cardJob-header">
-    <img class="cardJob-img" src="../../../assets/images/faceit.svg" alt="job-logo">
+    <img class="cardJob-img" [src]="job.logo" alt="job-logo">
     <div class="cardJob-content">
       <div class="cardJob-titleWrapper">
-        <h2 class="cardJob-title">{{job.company}}</h2>
-        <app-special-tag></app-special-tag>
+        <h2 class="cardJob-title">
+          {{job.company}}
+        </h2>
+        <app-special-tag *ngIf="job.featured || job.new"
+          [isNew]="job.new"
+          [isFeatured]="job.featured"/>
       </div>
-      <h3 class="cardJob-subTitle">{{job.position}}</h3>
+      <h3 class="cardJob-subTitle">
+        {{job.position}}
+      </h3>
       <ul class="cardJob-wrapperTags">
         <li class="cardJob-tag"
           *ngFor="let metTag of [job.postedAt, job.contract, job.location]">
@@ -17,8 +23,9 @@
   </header>
   <footer>
     <div class="cardJob-filterBtns">
-      <app-btn-base [textBtn]="btn"
-        *ngFor="let btn of btnTagList" />
+      <app-btn-base *ngFor="let btn of btnTagList"
+        [textBtn]="btn"
+        (click)="filterJob(btn)" />
     </div>
   </footer>
 </article>

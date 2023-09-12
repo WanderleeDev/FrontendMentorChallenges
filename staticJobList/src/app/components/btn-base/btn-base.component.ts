@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FilterJobsService } from 'src/app/services/filter-jobs.service';
 
 @Component({
   selector: 'app-btn-base',
@@ -7,5 +8,14 @@ import { Component, Input } from '@angular/core';
 })
 export class BtnBaseComponent {
   @Input() btnImage = '';
-  @Input() textBtn = 'Default'; 
+  @Input() textBtn = 'Default';
+
+  constructor(
+    private filterJobsService: FilterJobsService
+    ){}
+
+  public remove(param: string) {
+    this.btnImage
+      &&  this.filterJobsService.removeFilter(param)
+  }
 }

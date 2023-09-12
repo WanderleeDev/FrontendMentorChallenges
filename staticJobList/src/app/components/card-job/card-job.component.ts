@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IJobPosting } from 'src/interface/IJobPosting.interface';
+//  services
+import { FilterJobsService } from 'src/app/services/filter-jobs.service';
 
 @Component({
   selector: 'app-card-job',
@@ -10,8 +12,21 @@ export class CardJobComponent implements OnInit{
   @Input() job!: IJobPosting;
   btnTagList: string[] = [];
 
+  constructor(
+    private filterJobsService: FilterJobsService
+  ){}
+
   ngOnInit(): void {
-    this.btnTagList = [ this.job.level ,this.job.role, ...this.job.languages, ...this.job.tools]
-    console.log(this.btnTagList);
+    this.btnTagList = [
+      this.job.level,
+      this.job.role,
+      ...this.job.languages,
+      ...this.job.tools
+    ];
+    //console.log(this.btnTagList);
+  }
+
+  public filterJob(filter: string) {
+    this.filterJobsService.addFilter(filter)
   }
 }

@@ -1,4 +1,7 @@
-<div class="wrapperTag">
-  <span class="wrapperTag-tag">NEW</span>
-  <span class="wrapperTag-tag">FEATURED</span>
+<div 
+  class="wrapperTag">
+  <span *ngIf="isNew"
+    class="wrapperTag-tag">NEW</span>
+  <span *ngIf="isFeatured"
+    class="wrapperTag-tag">FEATURED</span>
 </div>

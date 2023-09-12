@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-special-tag',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./special-tag.component.scss']
 })
 export class SpecialTagComponent {
-
+  @Input() isNew = false
+  @Input() isFeatured = false
 }
