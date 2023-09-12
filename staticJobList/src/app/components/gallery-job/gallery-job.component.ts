@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { JobDataService } from 'src/app/services/job-data.service';
 import { IJobPosting } from 'src/interface/IJobPosting.interface';
 @Component({
@@ -9,11 +10,17 @@ import { IJobPosting } from 'src/interface/IJobPosting.interface';
 export class GalleryJobComponent implements OnInit{
 
   jobList!: IJobPosting[];
+  jobsSub!: Subscription;
 
   constructor(private jobDataService:JobDataService){}
 
   ngOnInit(): void {
-    this.jobList = this.jobDataService.getJobs()
+    this.jobsSub = this.jobDataService.getJobs()
+      .subscribe({
+        next: (res) => this.jobList = res,
+        error: (err) => console.error(err),
+        complete: () => console.log('subscription initial')
+      })
   }
 
 }

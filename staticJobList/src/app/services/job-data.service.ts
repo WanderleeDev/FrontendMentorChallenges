@@ -2,10 +2,17 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IJobPosting } from 'src/interface/IJobPosting.interface';
 
+import { FilterJobsService } from './filter-jobs.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class JobDataService {
+
+  constructor(
+    private filterJobsService: FilterJobsService
+  ){}
+
   private jobs = new BehaviorSubject<IJobPosting[]>([
     {
       id: 1,
@@ -161,5 +168,10 @@ export class JobDataService {
 
   public getJobs(): Observable<IJobPosting[]> {
     return this.jobs.asObservable()
+  }
+
+  public filterJobs(paramFilter: string) {
+    const newList = this.filterJobsService.filterJob(paramFilter,this.jobs.value)
+    this.jobs.next([...newList])
   }
 }

@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IJobPosting } from 'src/interface/IJobPosting.interface';
 //  services
 import { FilterJobsService } from 'src/app/services/filter-jobs.service';
+import { JobDataService } from 'src/app/services/job-data.service';
+JobDataService
 
 @Component({
   selector: 'app-card-job',
@@ -13,7 +15,8 @@ export class CardJobComponent implements OnInit{
   btnTagList: string[] = [];
 
   constructor(
-    private filterJobsService: FilterJobsService
+    private filterJobsService: FilterJobsService,
+    private jobDataService: JobDataService
   ){}
 
   ngOnInit(): void {
@@ -28,5 +31,6 @@ export class CardJobComponent implements OnInit{
 
   public filterJob(filter: string) {
     this.filterJobsService.addFilter(filter)
+    this.jobDataService.filterJobs(filter)
   }
 }

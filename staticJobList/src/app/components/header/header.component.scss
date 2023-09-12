@@ -1,6 +1,7 @@
 @use '../../../assets/scss/functions.scss' as *;
 
 .headerPage {
+  position: relative;
   height: toRem(155);
   background-color: var(--blackGreen);
   &-pictures {

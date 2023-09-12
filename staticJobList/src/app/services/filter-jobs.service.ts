@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+//  interface
+import { IJobPosting } from 'src/interface/IJobPosting.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterJobsService {
 
-  private filtersSubject = new BehaviorSubject<string[]>(['js', 'html'])
+  private filtersSubject = new BehaviorSubject<string[]>([])
+  
 
   public getFiltersObservable(): Observable<string[]> {
     return this.filtersSubject.asObservable()
@@ -27,8 +30,16 @@ export class FilterJobsService {
     this.filtersSubject.next([])
   }
 
-  public filterJob(valFilter: string) {
-    const prevValue = this.filtersSubject.value.filter( param => param !== valFilter)
-    this.filtersSubject.next([...prevValue])
+  public filterJob(valFilter: string, list: IJobPosting[]): IJobPosting[] {
+    const filteredJobs: IJobPosting[] = [];
+    for (const job of list) {
+      if (
+        job.languages.includes(valFilter) ||
+        job.tools.includes(valFilter) ||
+        job.level === valFilter ||
+        job.role === valFilter
+      ) { filteredJobs.push(job)}
+    }
+    return filteredJobs
   }
 }

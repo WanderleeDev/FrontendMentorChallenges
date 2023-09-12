@@ -1,8 +1,9 @@
 @use '../../../assets/scss/functions.scss' as *;
 
 .nav {
-  position: relative;
-  top: toRem(-60);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: space-between;
@@ -10,12 +11,10 @@
   padding-inline: 3rem;
   width: min(90%, toRem(1110));
   height: toRem(120);
-  background-color: #fff;
-  margin-inline: auto;
+  background-color: #ffffff;
   border-radius: var(--radius-min, .4rem);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
   &-list {
-    //display: grid;
-    //grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     display: flex;
     flex-wrap: wrap;
