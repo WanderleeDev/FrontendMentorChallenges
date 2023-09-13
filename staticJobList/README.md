@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
+[Preview site](https://6501c35910f85c0088f66f16--phenomenal-sunflower-73b692.netlify.app/)
+
+<img src="./src/assets/result.png" rel="img">
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
