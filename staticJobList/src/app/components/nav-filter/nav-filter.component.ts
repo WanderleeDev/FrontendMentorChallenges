@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { FilterJobsService } from 'src/app/services/filter-jobs.service';
 //  services
+import { FilterJobsService } from 'src/app/services/filter-jobs.service';
+import { JobDataService } from 'src/app/services/job-data.service';
 
 @Component({
   selector: 'app-nav-filter',
@@ -14,7 +15,8 @@ export class NavFilterComponent implements OnInit, OnDestroy{
   iconBtn = '../../../assets/images/icon-remove.svg'
 
   constructor(
-    private filterJobsService: FilterJobsService
+    private filterJobsService: FilterJobsService,
+    private jobDataService: JobDataService
   ){}
 
   ngOnInit(): void {
@@ -28,15 +30,11 @@ export class NavFilterComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
     this.filterSub.unsubscribe()
-    console.warn('subscription finally');
   }
-
 
   public clearFilter() {
     this.filterJobsService.resetFilter();
+    this.jobDataService.restoreJobs()
   }
 
-  public remove(toRemove: string) {
-    this.filterJobsService.removeFilter(toRemove);
-  }
 }

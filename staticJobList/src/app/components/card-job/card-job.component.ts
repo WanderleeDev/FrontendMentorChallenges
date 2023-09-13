@@ -26,7 +26,6 @@ export class CardJobComponent implements OnInit{
       ...this.job.languages,
       ...this.job.tools
     ];
-    //console.log(this.btnTagList);
   }
 
   public filterJob(filter: string) {
