@@ -11,6 +11,12 @@
   @media screen and (min-width:toRem(700)){
     padding-top: 1rem;
   }
+  @media screen and (min-width:toRem(1100)){
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding-block: 3rem;
+    align-items: center;
+  }
   &-header {
     display: flex;
     flex-flow: column wrap;
@@ -68,10 +74,14 @@
       &::marker{
         color: #929c9d9c;
         padding-left: .5rem;
-      }      
+      }
     }
   }
-
+  &-footer {
+    @media screen and (min-width:toRem(1100)) {
+      justify-self: flex-end;
+    }
+  }
   &-filterBtns {
     border-top: solid 1px var(--letterSecondary);
     display: flex;
@@ -80,7 +90,7 @@
     padding-block: 1rem;
     @media screen and (min-width:toRem(700)){
       border-top: initial;
+      flex-flow: row nowrap;
     }
   }
 }
-
