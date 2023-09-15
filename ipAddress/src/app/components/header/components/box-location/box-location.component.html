@@ -1,0 +1,22 @@
+<div class="boxData">
+  <p class="boxData-subWrapper">
+    <span class="boxData-subTitle">ip address</span>
+    <span class="boxData-text"> {{locationData?.ip}} </span>
+  </p>
+  <p class="boxData-subWrapper">
+    <span class="boxData-subTitle">Location</span>
+    <span class="boxData-text">
+      {{locationData?.location?.city}},
+      {{locationData?.location?.region}} -
+      {{locationData?.location?.country}}
+    </span>
+  </p>
+  <p class="boxData-subWrapper">
+    <span class="boxData-subTitle">timezone</span>
+    <span class="boxData-text"> UTC{{locationData?.location?.timezone}} </span>
+  </p>
+  <p class="boxData-subWrapper">
+    <span class="boxData-subTitle">isp</span>
+    <span class="boxData-text"> {{locationData?.isp}} </span>
+  </p>
+</div>

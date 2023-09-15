@@ -1,0 +1,17 @@
+<form class="searchBar"
+  autocomplete="off">
+  <label class="searchBar-subWrapper" for="search">
+    <input class="searchBar-input"
+      [(ngModel)]="inputValue"
+      placeholder="Search for any IP address or domain"
+      id="search"
+      type="text"
+      name="search">
+    <button class="searchBar-btn"
+      (click)="locationHandler({ip: inputValue})"
+      aria-label="search location"
+      title="search"
+      type="button"
+    ></button>
+  </label>
+</form>

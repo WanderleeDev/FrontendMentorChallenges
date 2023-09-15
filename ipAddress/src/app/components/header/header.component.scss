@@ -1,0 +1,17 @@
+.header {
+  background-image: url('../../../assets/images/pattern-bg-mobile.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 18rem;
+  @media screen and (min-width: 45rem) {
+    height: 15rem;
+    background-image: url('../../../assets/images/pattern-bg-desktop.png');
+  }
+
+  &-title {
+    font-size: 1.8rem;
+    text-align: center;
+    padding-block: 1.5rem;
+    font-weight: 500;
+  }
+}
