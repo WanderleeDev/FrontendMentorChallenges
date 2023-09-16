@@ -1,0 +1,38 @@
+.accordion{
+  display: inherit;
+  gap: var(--spacing);
+
+  &-content {
+    display: inherit;
+    gap: var(--spacing);
+  }
+
+  &-example {
+    display: grid;
+    grid-template-columns: calc(100% - 2rem) 2rem;
+    padding: calc(var(--spacing) / 2) var(--spacing);
+  }
+
+  &-text {
+    text-transform: capitalize;
+  }
+
+  &-btnCopy {
+    background: url('../../../../../assets/images/copy-svgrepo-com.svg') no-repeat center;
+    width: 2rem;
+    height: 2rem;
+    background-size: 1.3rem;
+    cursor: pointer;
+    background-color: #000;
+    border-radius: var(--radius-min);
+    border: solid .15rem #4c91d1;
+    transition: transform .2s ease-in-out;
+    &:hover {
+      transform: scale(.95);
+    }
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+}
+

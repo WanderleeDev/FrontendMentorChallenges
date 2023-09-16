@@ -1,4 +1,7 @@
 <figure class="map">
   <div id="map"></div>
-  <button (click)="clip()" class="map-title">{{locateData?.location?.region ?? 'Leaflet'}}</button>
+  <span class="map-title">
+    {{locateData?.location?.region ?? 'Leaflet'}}
+  </span>
+  <app-examples-board />
 </figure>

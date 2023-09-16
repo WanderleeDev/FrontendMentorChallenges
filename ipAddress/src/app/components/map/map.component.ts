@@ -24,8 +24,4 @@ export class MapComponent implements OnInit {
       this.mapSvc.GeolocationOnTheMap(this.locateData)
     })
   }
-
-  clip(){
-    console.log('click');
-  }
 }

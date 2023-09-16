@@ -8,14 +8,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { MapComponent } from './components/map/map.component';
 import { SearchBarComponent } from './components/header/components/search-bar/search-bar.component';
 import { BoxLocationComponent } from './components/header/components/box-location/box-location.component';
-
+import { ExamplesBoardComponent } from './components/examples-board/examples-board.component';
+import { AccordionComponent } from './components/examples-board/component/accordion/accordion.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MapComponent,
     SearchBarComponent,
-    BoxLocationComponent
+    BoxLocationComponent,
+    ExamplesBoardComponent,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,

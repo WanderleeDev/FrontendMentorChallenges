@@ -10,7 +10,7 @@
   transform: translate(-50%, -40%);
   background-color: var(--blanco);
   border-radius: var(--radius, 1rem);
-  box-shadow: 2px 2px 9px 3px rgba(0,0,0,0.39);
+  box-shadow: var(--basicShadow, 2px 2px 9px 3px rgba(0, 0, 0, 0.39));
   z-index: 500;
   @media screen and (min-width: 45rem) {
     grid-template-columns: repeat(4, 1fr);

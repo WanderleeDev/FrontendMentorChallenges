@@ -2,7 +2,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ILocation } from 'src/app/interface/ILocation.interface';
-import { IParamsHttp } from 'src/app/interface/IParamsHttp.interface';
 //  services
 import { LocationService } from 'src/app/services/location.service';
 import { MapsService } from 'src/app/services/maps.service';
@@ -31,10 +30,9 @@ export class SearchBarComponent implements OnInit {
     })
   }
 
-  public locationHandler(params: Partial<IParamsHttp>) {
-    this.locationSvc.getLocationApi(params)
+  public locationHandler(params: string) {
+    this.locationSvc.getLocationApi(params.trim())
       .subscribe(res => {
-        console.log(res);
         this.mapSvc.updateMarker(res)
         this.locationSvc.updateLocation(res)
       })

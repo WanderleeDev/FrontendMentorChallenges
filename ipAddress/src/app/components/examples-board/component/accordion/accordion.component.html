@@ -1,0 +1,19 @@
+<details class="accordion"
+  (toggle)="accordionHandler()">
+  <summary [attr.aria-label]="ariaMessageIP"
+  >{{dataAccordion.title}}</summary>
+  <div class="accordion-content"
+   *ngFor="let item of dataAccordion.list">
+    <p class="accordion-example">
+      <span class="accordion-text">
+        {{item}}
+      </span>
+      <button class="accordion-btnCopy"
+      (click)="copyText(item)"
+        aria-label="copy example"
+        title="copy example"
+        type="button">
+      </button>
+    </p>
+  </div>
+</details>
