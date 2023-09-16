@@ -9,7 +9,7 @@ import { ILocation } from '../interface/ILocation.interface';
   providedIn: 'root'
 })
 export class LocationService   {
-  private baseApi = 'https://g eo.ipify.org/api/v2/country,city'
+  private baseApi = 'https://geo.ipify.org/api/v2/country,city'
   private apiKey = 'at_86ixnQqRT54vJifUKiNA2Gv2HGksa';
   private locationData = new Subject<Partial<ILocation>>()
   private regex = {

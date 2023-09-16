@@ -81,7 +81,7 @@
     transition: filter .2s linear, transform .2s linear, opacity .2s linear, pointer-events .2s linear;
 
     &::-webkit-scrollbar {
-    width: .5rem;
+      width: .5rem;
     }
 
     &::-webkit-scrollbar-track {
@@ -94,7 +94,6 @@
       border-radius: var(--radius);      /* roundness of the scroll thumb */
       border: .12rem solid var(--negro);  /* creates padding around scroll thumb */
     }
-
   }
 
   &-extra {
