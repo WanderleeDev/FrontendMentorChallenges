@@ -1,18 +1,27 @@
 :host {
+  display: grid;
+  gap: var(--spacing, 1rem);
   position: fixed;
   z-index: 600;
-  top: 0;
+  bottom: 1rem;
+  left: 1rem;
   width: min(100%, 20rem);
   user-select: none;
 }
 
 .board {
   display: grid;
-  background-color: #333;
+  background-color: var(--blanco);
   padding: 1rem 1.5rem;
   gap: var(--spacing);
   border-radius: var(--radius-min);
   box-shadow: var(--basicShadow, 2px 2px 9px 3px rgba(0, 0, 0, 0.39));
+
+  pointer-events: none;
+  opacity: 0;
+  filter: blur(0.2rem);
+  transform: translateY(1rem);
+  transition: filter .2s linear, transform .2s linear, opacity .2s linear, pointer-events .2s linear;
 
   &-title {
     font-weight: 600;
@@ -23,4 +32,33 @@
     display: grid;
     gap: var(--spacing);
   }
+}
+
+.showBoard {
+  pointer-events: all;
+  opacity: 1;
+  filter: blur(0rem);
+  transform: translateY(0);
+}
+
+.btnBoard {
+  background: url('../../../assets//images/map-svgrepo-com.svg') no-repeat center;
+  background-size: cover;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: solid .15rem var(--blanco);
+  background-color: var(--negro);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform .2s ease-in-out, background-color .2s ease-in-out, border .2s ease-in-out ;
+  &:hover {
+    transform: scale(.95);
+  }
+  &:active {
+    transform: scale(1.1);
+  }
+}
+.btnBoard-clicked {
+  border: solid 1px var(--negro);
+  background-color: var(--blanco);
 }

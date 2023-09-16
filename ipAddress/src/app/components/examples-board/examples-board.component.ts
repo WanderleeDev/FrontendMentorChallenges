@@ -14,4 +14,13 @@ export class ExamplesBoardComponent {
     title: 'Examples Domain',
     list: ['amazon.com', 'samsung.com']
   }
+  ariaBtnBoard = 'open board';
+  isViewBoard = false;
+
+  boardHandler() {
+    this.isViewBoard = !this.isViewBoard
+    this.isViewBoard
+      ? this.ariaBtnBoard = 'close board'
+      : this.ariaBtnBoard = 'open board'
+  }
 }

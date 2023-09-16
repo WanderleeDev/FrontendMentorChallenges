@@ -13,6 +13,7 @@ import { MapsService } from 'src/app/services/maps.service';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
+  isOpenInfo = false;
   inputValue = '';
   locationData!: Partial<ILocation>
   locationSub!: Subscription
@@ -36,5 +37,9 @@ export class SearchBarComponent implements OnInit {
         this.mapSvc.updateMarker(res)
         this.locationSvc.updateLocation(res)
       })
+  }
+
+  public btnInfoHandler(){
+    this.isOpenInfo = !this.isOpenInfo
   }
 }

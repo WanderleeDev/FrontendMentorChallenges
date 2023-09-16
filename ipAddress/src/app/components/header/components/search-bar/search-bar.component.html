@@ -14,4 +14,19 @@
       type="button"
     ></button>
   </label>
+  <div class="searchBar-iconHelp">
+    <button class="searchBar-icon"
+      (click)="btnInfoHandler()"
+      type="button"
+      aria-label=" open info geolocation">
+    </button>
+    <p [class.showInfo]="isOpenInfo"
+      class="searchBar-iconText">
+      IP geolocation may provide information about the approximate location associated with an IP address. However, location accuracy may vary depending on the provider and the technique used to determine geolocation.
+      <strong class="searchBar-extra">
+        Examples  =>
+        <span class="searchBar-iconExtra"></span>
+      </strong>
+    </p>
+  </div>
 </form>

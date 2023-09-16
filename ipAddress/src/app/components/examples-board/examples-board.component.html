@@ -1,4 +1,5 @@
-<aside class="board">
+<aside class="board"
+  [class.showBoard]="isViewBoard">
   <h2 class="board-title">
     Examples board
   </h2>
@@ -7,3 +8,9 @@
     <app-accordion [dataAccordion]="domainList"/>
   </div>
 </aside>
+<button class="btnBoard"
+  [class.btnBoard-clicked]="isViewBoard"
+  (click)="boardHandler()"
+  title="open board"
+  [attr.aria-label]="ariaBtnBoard">
+</button>

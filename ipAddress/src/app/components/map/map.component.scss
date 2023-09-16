@@ -1,20 +1,6 @@
 .map {
   height: var(--dynamicH, 100vh);
   background-color: rgb(61, 145, 219);
-
-  &-title {
-    position: fixed;
-    left: 1rem;
-    font-weight: 600;
-    bottom: .5rem;
-    padding: .2rem .7rem;
-    border-radius: var(--radius-min);
-    color: var(--negro);
-    z-index: 600;
-    letter-spacing: .1rem;
-    background-color: var(--blanco);
-    cursor: pointer;
-  }
 }
 
 #map {

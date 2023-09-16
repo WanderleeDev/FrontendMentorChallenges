@@ -9,8 +9,8 @@ import { ILocation } from '../interface/ILocation.interface';
   providedIn: 'root'
 })
 export class LocationService   {
-  private baseApi = 'https:// geo.ipify.org/api/v2/country,city'
-  private apiKey = 'at_kTx1CERpHxk1bppRxlBfhff8iH2aw';
+  private baseApi = 'https://g eo.ipify.org/api/v2/country,city'
+  private apiKey = 'at_86ixnQqRT54vJifUKiNA2Gv2HGksa';
   private locationData = new Subject<Partial<ILocation>>()
   private regex = {
     ip: /^\b(?:\d{1,3}\.){3}\d{1,3}\b$/,

@@ -1,5 +1,9 @@
 # IpAddress
 
+[Preview site](https://6501f0fe5232ef2560563207--dashing-pie-817a18.netlify.app/)
+
+<img src="./src/assets/images/web.png" rel="img">
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
 ## Development server

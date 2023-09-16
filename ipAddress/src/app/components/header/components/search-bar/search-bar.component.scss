@@ -1,11 +1,11 @@
 .searchBar {
+  position: relative;
   width: min(90%, 37.5rem);
   margin-inline: auto;
-  background-color: var(--blanco);
+  background-color: #393939;
   color: #393939;
   border-radius: var(--radius, 1rem);
   letter-spacing: .1rem;
-  overflow: hidden;
   &-subWrapper {
     display: grid;
     grid-template-columns: calc(100% - 3.5rem) 3.5rem;
@@ -15,12 +15,14 @@
     width: 100%;
     background-color: #fff;
     padding: 1rem .5rem;
+    border-top-left-radius: var(--radius, 1rem);
+    border-bottom-left-radius: var(--radius, 1rem);
     cursor: text;
     &::placeholder {
       color: #b6b6b6;
     }
     &::selection{
-      background-color: #8989f8b2;
+      background-color: #aeaef3b2;
     }
   }
 
@@ -32,13 +34,90 @@
     background-size: .7rem;
     cursor: pointer;
     overflow: hidden;
-    transition: transform linear .2s;
+    border-top-right-radius: var(--radius, 1rem);
+    border-bottom-right-radius: var(--radius,1rem);
+    transition: background-color linear .2s;
+
     &:hover {
       background-color: #000000;
-      transform: scale(.9);
     }
     &:active {
-      background-color: #393939;
+      background-color: #383838;
     }
   }
+
+  &-iconHelp {
+    display: grid;
+    position: absolute;
+    right: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: url('../../../../../assets/images/question-filled-svgrepo-com.svg') no-repeat center;
+    background-size: cover;
+    cursor: help;
+  }
+  &-iconText {
+    width: max(100%, 13rem);
+    height: 7rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    right: 2rem;
+    top: -3rem;
+    background-color: var(--blanco);
+    color: var(--negro);
+    overflow: auto;
+    font-size: .8rem;
+    user-select: none;
+    border-radius: var(--radius-min);
+
+    opacity: 0;
+    filter: blur(0.2rem);
+    transform: translateY(1rem);
+    transition: filter .2s linear, transform .2s linear, opacity .2s linear, pointer-events .2s linear;
+
+    &::-webkit-scrollbar {
+    width: .5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--negro);        /* color of the tracking area */
+      border-radius: var(--radius);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--blanco);    /* color of the scroll thumb */
+      border-radius: var(--radius);      /* roundness of the scroll thumb */
+      border: .12rem solid var(--negro);  /* creates padding around scroll thumb */
+    }
+
+  }
+
+  &-extra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #8989f8b2;
+    border-radius: var(--radius-min);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  &-iconExtra {
+    display: inline-block;
+    background: url('../../../../../assets/images/map-svgrepo-com.svg') no-repeat center;
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.showInfo {
+  opacity: 1;
+  filter: initial;
+  transform: translateY(0);
 }
