@@ -5,6 +5,7 @@ import { ILocation } from 'src/app/interface/ILocation.interface';
 import { IParamsHttp } from 'src/app/interface/IParamsHttp.interface';
 //  services
 import { LocationService } from 'src/app/services/location.service';
+import { MapsService } from 'src/app/services/maps.service';
 
 
 @Component({
@@ -14,11 +15,14 @@ import { LocationService } from 'src/app/services/location.service';
 })
 export class SearchBarComponent implements OnInit {
   inputValue = '';
-  credits = 'empty';
-  locationData?: Partial<ILocation>
+  locationData!: Partial<ILocation>
   locationSub!: Subscription
 
-  constructor( private locationSvc: LocationService ){}
+  constructor(
+    private locationSvc: LocationService,
+    private mapSvc: MapsService
+    ){}
+
   ngOnInit(): void {
     this.locationSub = this.locationSvc.getLocationObservable().subscribe({
       next: (res) => this.locationData = res,
@@ -28,10 +32,11 @@ export class SearchBarComponent implements OnInit {
   }
 
   public locationHandler(params: Partial<IParamsHttp>) {
-    this.locationSvc.getLocation(params)
+    this.locationSvc.getLocationApi(params)
       .subscribe(res => {
-        this.locationSvc.updateLocation(res)
         console.log(res);
+        this.mapSvc.updateMarker(res)
+        this.locationSvc.updateLocation(res)
       })
   }
 }

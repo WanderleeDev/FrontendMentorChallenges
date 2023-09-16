@@ -19,6 +19,9 @@
     &::placeholder {
       color: #b6b6b6;
     }
+    &::selection{
+      background-color: #8989f8b2;
+    }
   }
 
   &-btn {

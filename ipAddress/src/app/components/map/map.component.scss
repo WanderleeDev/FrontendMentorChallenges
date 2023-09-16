@@ -4,8 +4,16 @@
 
   &-title {
     position: fixed;
-    right: 1rem;
+    left: 1rem;
+    font-weight: 600;
     bottom: .5rem;
+    padding: .2rem .7rem;
+    border-radius: var(--radius-min);
+    color: var(--negro);
+    z-index: 600;
+    letter-spacing: .1rem;
+    background-color: var(--blanco);
+    cursor: pointer;
   }
 }
 
