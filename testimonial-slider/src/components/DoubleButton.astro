@@ -1,21 +1,23 @@
 ---
 ---
-<div class="flex absolute bottom-0 bg-[#FEFEFC] w-20 h-10 shadow-xl border-[.1rem] justify-between px-4 rounded-3xl left-2/4 -translate-x-2/4 translate-y-5 md:translate-x-12 md:left-0"
+<div class="flex absolute bottom-0 bg-[#FEFEFC] shadow-xl border-[.1rem] justify-between rounded-3xl left-2/4 -translate-x-2/4 translate-y-5 md:translate-x-12 md:left-0"
   id="container-btn">
   <button 
-    class="scale-75" 
+    class="scale-75 w-10 h-10" 
     type="button"
     data-btn="previous"
+    aria-label="view previous image slider"
   >
-    <svg class="pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="12" height="18"><path fill="none" stroke="#8585AC" stroke-width="3" d="M11 1L3 9l8 8"/></svg>
+    <svg aria-hidden="true" class="pointer-events-none mx-auto" xmlns="http://www.w3.org/2000/svg" width="12" height="18"><path fill="none" stroke="#8585AC" stroke-width="3" d="M11 1L3 9l8 8"/></svg>
   </button>
 
   <button 
-    class="scale-75" 
+    aria-label="view next image slider"
+    class="scale-75 w-10 h-10" 
     type="button"
     data-btn="next"
   >
-    <svg class="pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="13" height="18"><path fill="none" stroke="#8585AC" stroke-width="3" d="M2 1l8 8-8 8"/></svg>
+    <svg aria-hidden="true" class="pointer-events-none mx-auto" xmlns="http://www.w3.org/2000/svg" width="13" height="18"><path fill="none" stroke="#8585AC" stroke-width="3" d="M2 1l8 8-8 8"/></svg>
   </button>
 
 </div>

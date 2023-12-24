@@ -1,33 +1,52 @@
-# Astro Starter Kit: Minimal
+# Testimonial Slider
+<img src="./src/assets/screen-web.webp" alt="screen web">
 
-```sh
-npm create astro@latest -- --template minimal
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[Demo page](https://slider-seven-murex.vercel.app/)
 
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+└── 📁testimonial-slider
+    └── README.md
+    └── astro.config.mjs
+    └── 📁design
+        └── desktop-design-slide-1.jpg
+        └── desktop-design-slide-2.jpg
+        └── desktop-preview.jpg
+        └── mobile-design-slide-1.jpg
+        └── mobile-design-slide-2.jpg
+    └── 📁extras
+        └── README-template.md
+        └── README.md
+        └── style-guide.md
+    └── package.json
+    └── pnpm-lock.yaml
+    └── 📁public
+        └── favicon-32x32.webp
+        └── favicon.svg
+    └── 📁src
+        └── 📁assets
+            └── image-john.webp
+            └── image-tanya.webp
+            └── pattern-bg.svg
+            └── pattern-curve.svg
+            └── pattern-quotes.svg
+        └── 📁components
+            └── DoubleButton.astro
+            └── SlideCard.astro
+            └── Slider.astro
+        └── env.d.ts
+        └── 📁interfaces
+            └── ISlider.interface.ts
+        └── 📁pages
+            └── index.astro
+    └── tailwind.config.mjs
+    └── tsconfig.json
+    └── vercel.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 

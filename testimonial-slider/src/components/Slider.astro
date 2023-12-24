@@ -1,64 +1,48 @@
 ---
-import DoubleButton from "./DoubleButton.astro";
+import SlideCard from './SlideCard.astro'
 ---
-<section class="flex items-center justify-center flex-col min-h-[100dvh] gap-8 md:gap-0 p-4 py-10 md:flex-row-reverse max-w-[90rem] mx-auto">
+<section class="flex items-center justify-center flex-col min-h-[100dvh] gap-12 md:gap-0 p-4 py-10 md:flex-row-reverse max-w-[90rem] mx-auto">
 
-  <div class="bg-img-wrapper no bg-no-repeat bg-center bg-contain grid place-content-center p-16 basis-2/4 md:-translate-x-[10%] xl:scale-110 relative">
-
-    <div class="relative w-72 h-72 md:w-80 md:h-80 xl:w-[28rem] xl:h-[28rem]">
-      <img class="aspect-square w-full h-full object-cover absolute" loading="lazy" alt="photo" srcset="../../public/image-tanya.webp">
-      <!-- <img class="aspect-square" loading="lazy" alt="photo" srcset="../../public/image-john.webp"> -->
-      <DoubleButton />
-    </div>
-
-  </div>
-
-  <div class="basis-2/4 clamp-responsive max-w-[40ch] md:translate-x-[10%] bg-pattern-quote bg-no-repeat bg-size-quote bg-[50%_0%] pt-8 -translate-y-10 md:bg-[15%_0%] md:-translate-y-0">
-    <p class="quote leading-normal font-light ">
-      I've been interested in coding for a while but never taken the jump, until now. I couldn't recommend this course enough. I'm now in the job of my dreams and so excited about the future.
-    </p>
-
-    <h1 class="text-base md:text-xl mt-8 flex flex-col md:flex-row md:gap-3 items-center">
-      <strong class="font-extrabold">Tanya Sinclair</strong>
-      <span class="font-normal- text-[#BABADB]">UX Engineer</span>
-    </h1>
-  </div>
-
+  <SlideCard />
+  
 </section>
 
-<style>
-  .clamp-responsive {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(1.2rem, 2vw, 2.5rem);
-  }
-
-  .quote {
-    &::before {
-      content: open-quote;
-    }
-    &::after {
-      content: close-quote;
-    }
-  }
-
-  .size-img {
-    margin: auto;
-    width: 25rem;
-    height: 25rem;
-  }
-</style>  
-
 <script>
+  import type { ISlider } from "../interfaces/ISlider.interface";
+
+  const SliderData: ISlider[] = [ 
+    {
+      quote: " I've been interested in coding for a while but never taken the jump, until now. I couldn't recommend this course enough. I'm now in the job of my dreams and so excited about the future.",
+      author: 'Tanya Sinclair',
+      work: 'UX Engineer'
+    },
+    {
+      quote: "If you want to lay the best foundation possible I'd recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer",
+      author: 'John Tarkpor',
+      work: 'Junior Front-end Developer'
+    }
+  ]
+
   const containerBtn = document.querySelector('#container-btn') as HTMLDivElement;
+  const containerImg = document.querySelector('#img-wrapper') as HTMLDivElement;
+  const quote = document.querySelector('#slider-quote') as HTMLParagraphElement;
+  const name = document.querySelector('#slider-name') as HTMLElement;
+  const work = document.querySelector('#slider-work') as HTMLElement;
   const  BtnOption = { prev: 'previous', next: 'next' }
   
   const btnhandler: (e: Event) => void = (e: Event) => {
     if (e.target instanceof HTMLButtonElement) {
       if (e.target.getAttribute('data-btn') === BtnOption.prev) {
-        console.log('prev');
+        containerImg.style.translate ='0%';
+        quote.textContent = SliderData[0].quote;
+        name.textContent = SliderData[0].author;
+        work.textContent = SliderData[0].work;
       }
       if (e.target.getAttribute('data-btn') === BtnOption.next) {
-        console.log('next');
+        containerImg.style.translate ='-100%';
+        quote.textContent = SliderData[1].quote;
+        name.textContent = SliderData[1].author;
+        work.textContent = SliderData[1].work;
       }
     }
   } 
