@@ -1,0 +1,14 @@
+dist
+node_modules
+
+tsconfig.node.json
+package-lock.json
+package.json
+pnpm-lock.yaml
+
+tailwind.config.js
+postcss.config.js
+vite.config.ts
+
+.eslintrc.cjs
+.prettierrc
