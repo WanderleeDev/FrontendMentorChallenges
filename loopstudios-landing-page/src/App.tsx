@@ -1,11 +1,18 @@
-import './App.css';
+//	Layout
+import { BaseLayout } from './layout/BaseLayout';
+//	Components
+import { Banner } from './components/Banner';
+import { Presentation } from './components/Presentation';
+import { Gallery } from './components/Gallery';
 
 function App() {
 	return (
 		<>
-			<h1 className='text-3xl font-bold underline text-blue-400'>
-				Hello world!
-			</h1>
+			<Banner />
+			<BaseLayout>
+				<Presentation />
+				<Gallery />
+			</BaseLayout>
 		</>
 	);
 }
