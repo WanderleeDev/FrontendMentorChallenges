@@ -19,7 +19,7 @@ export const Header = (): JSX.Element => {
 			style={scrollAnimation}
 		>
 			<NavbarMobile navbarIsOpen={navbarIsOpen} />
-			<div className='flex items-center justify-between p-4 max-w-screen-xl uppercase text-white mx-auto relative z-20'>
+			<div className='flex items-center justify-between p-4 py-8 max-w-screen-xl uppercase text-white mx-auto relative z-20'>
 				<Logo />
 				<Navbar />
 				<BtnMobile navbarHandler={navbarHandler} />

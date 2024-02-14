@@ -12,7 +12,7 @@ export default {
 				'desktop': '1440px',
 			},
 			fontSize: {
-				title: 'clamp(2rem, 4vw, 3rem)',
+				title: 'clamp(2.1rem, 5vw, 4rem)',
 				subTitle: 'clamp(1.8rem, 3.8vw, 2.8rem)',
 				'heading-3': 'clamp(1.4rem, 3.5vw, 2.3rem)',
 			},

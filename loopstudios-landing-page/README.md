@@ -1,30 +1,121 @@
-# React + TypeScript + Vite
+# 🚀 Proyecto de Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una landing page creada con React, Vite y TypeScript. El diseño se basa en los desafíos de Frontend Mentor.
 
-Currently, two official plugins are available:
+## 🌐 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Puedes ver la versión en vivo del proyecto en este [enlace](https://dist-five-tau.vercel.app/)
 
-## Expanding the ESLint configuration
+## 📖 Menú
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Características
+- Instalación
+- Estructura de Carpetas
+- Licencia
 
-- Configure the top-level `parserOptions` property like this:
+## 🎯 Características
 
-```js
-export default {
-	// other rules...
-	parserOptions: {
-		ecmaVersion: 'latest',
-		sourceType: 'module',
-		project: ['./tsconfig.json', './tsconfig.node.json'],
-		tsconfigRootDir: __dirname,
-	},
-};
+- **Componentización**: El proyecto practica la componentización para mejorar la reutilización del código y la eficiencia del desarrollo.
+- **Organización por carpetas**: El código del proyecto está organizado en carpetas para facilitar la navegación y el mantenimiento del código.
+- **Uso y tipado de props**: Se hace uso de las props en los componentes de React y se tipan correctamente con TypeScript para mejorar la seguridad del código.
+- **Uso del useState**: Se utiliza el hook useState de React para manejar el estado del componente de la barra de navegación y permitir su despliegue.
+
+## ⚙️ Instalación
+
+Para instalar y ejecutar este proyecto, sigue estos pasos:
+
+1. Clona el repositorio: `git clone <url-del-repositorio>`
+2. Instala las dependencias: `npm install`
+3. Ejecuta el proyecto: `npm run dev`
+
+## 📂 Estructura de Carpetas
+
+```
+└── 📁loopstudios-landing-page
+    └── .eslintignore
+    └── .eslintrc.cjs
+    └── .gitignore
+    └── .prettierignore
+    └── .prettierrc
+    └── README.md
+    └── index.html
+    └── package.json
+    └── pnpm-lock.yaml
+    └── postcss.config.js
+    └── 📁public
+        └── react.svg
+    └── 📁src
+        └── App.tsx
+        └── 📁assets
+            └── 📁design
+                └── active-states.jpg
+                └── desktop-design.jpg
+                └── desktop-preview.jpg
+                └── mobile-design.jpg
+                └── mobile-menu.jpg
+            └── 📁images
+                └── 📁desktop
+                    └── image-curiosity.webp
+                    └── image-deep-earth.webp
+                    └── image-fisheye.webp
+                    └── image-from-above.webp
+                    └── image-grid.webp
+                    └── image-hero.webp
+                    └── image-night-arcade.webp
+                    └── image-pocket-borealis.webp
+                    └── image-soccer-team.webp
+                └── 📁icons
+                    └── icon-close.svg
+                    └── icon-facebook.svg
+                    └── icon-hamburger.svg
+                    └── icon-instagram.svg
+                    └── icon-pinterest.svg
+                    └── icon-twitter.svg
+                    └── logo.svg
+                └── 📁mobile
+                    └── image-curiosity.webp
+                    └── image-deep-earth.webp
+                    └── image-fisheye.webp
+                    └── image-from-above.webp
+                    └── image-grid.webp
+                    └── image-hero.webp
+                    └── image-interactive.webp
+                    └── image-night-arcade.webp
+                    └── image-pocket-borealis.webp
+                    └── image-soccer-team.webp
+        └── 📁components
+            └── Banner.tsx
+            └── BasicBtn.tsx
+            └── BtnMobile.tsx
+            └── Footer.tsx
+            └── Gallery.tsx
+            └── Header.tsx
+            └── ImageGallery.tsx
+            └── Navbar.tsx
+            └── NavbarMobile.tsx
+            └── Presentation.tsx
+            └── SocialMedia.tsx
+        └── 📁contexts
+            └── NavbarContextProps.interface.ts
+            └── NavbarProvider.tsx
+        └── 📁data
+            └── images.ts
+        └── index.css
+        └── 📁interfaces
+            └── CustomStyles .interface.ts
+            └── ImageFormat.interface.ts
+        └── 📁layout
+            └── BaseLayout.tsx
+        └── main.tsx
+        └── 📁shared
+            └── Logo.tsx
+        └── vite-env.d.ts
+    └── tailwind.config.js
+    └── tsconfig.json
+    └── tsconfig.node.json
+    └── vite.config.ts
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 📄 Licencia
+
+Este proyecto está licenciado bajo los términos de la licencia MIT.
