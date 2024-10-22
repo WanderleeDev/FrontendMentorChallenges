@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #faf1eb;
+  --foreground: #171717;
+  --text-primary-clr: #260e05;
+  --text-secondary-clr: #fff;
+  --text-clr-primary-light: #918381;
+  --accent-clr: #952c0c;
+  --accent-clr-light: #c83a10;
+  --scroll-track-clr: var(--background);
+}
+
+.dark {
+  --background: #171717;
+  --foreground: #fcf8f5;
+  --text-primary-clr: #fff;
+  --text-secondary-clr: #260e05;
+  --text-clr-primary-light: #c2b8b6;
+  --accent-clr: #c83a10;
+  --accent-clr-light: #ff5630;
+  --scroll-track-clr: var(--text-clr-primary-light);
+}
+
+@layer base {
+  body {
+    color: var(--text-primary-clr);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 80rem;
+    margin: 0 auto;
+    transition: color 0.2s linear, background 0.2s linear;
+    padding: 3rem 1.5rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hoverStyles {
+    transition: transform 0.2s linear;
+
+    &:hover {
+      transform: scale(0.9);
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+
+  .star-opacity {
+    transition: opacity 0.3s linear, transform 0.3s linear;
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(0.5rem);
+    }
+  }
+
+  .star-opacity-min {
+    transition: opacity 0.3s linear;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
+  .customScroll {
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--scroll-track-clr);
+      border-radius: 0.75rem;
+      padding-left: 0.1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--accent-clr-light);
+      border-radius: 0.75rem;
+    }
+  }
+}
