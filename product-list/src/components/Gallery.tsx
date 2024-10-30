@@ -1,9 +1,9 @@
-import { Product } from "@/models/Product.models";
+import { ProductTranslation } from "@/models/Product.models";
 import ProductCard from "./ProductCard";
 import fetcher from "@/utils/fetcher";
 
 export default async function Gallery() {
-  const { data, error } = await fetcher<Product[]>(
+  const { data, error } = await fetcher<ProductTranslation[]>(
     `${process.env.API_PRODUCTS}/products`
   );
 

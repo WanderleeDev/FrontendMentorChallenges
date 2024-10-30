@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
-import products from "../../../../public/data.json";
-import { Product } from "@/models/Product.models";
+import { ProductTranslation } from "@/models/Product.models";
+import { getAllProducts } from "@/querys/getAllProducts";
 
 export async function GET() {
-  return NextResponse.json(products as Product[], { status: 200 });
+  const { data, error } = await getAllProducts<ProductTranslation>();
+
+  if (error) {
+    return NextResponse.json({ message: error }, { status: 404 });
+  }
+
+  return NextResponse.json({ data, error }, { status: 200 });
 }

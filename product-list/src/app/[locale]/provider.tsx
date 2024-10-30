@@ -1,5 +1,6 @@
 "use client";
 import { ThemeProvider } from "next-themes";
+import { ModalProvider } from "@/modules/modal/context/modalContext";
 
 interface Props {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ interface Props {
 export default function Providers({ children }: Props) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
-      {children}
+      <ModalProvider>{children}</ModalProvider>
     </ThemeProvider>
   );
 }

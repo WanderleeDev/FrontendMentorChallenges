@@ -1,14 +1,12 @@
-interface ResponseFetcher<T> {
-  error: string | null;
-  data: T | null;
-}
+import { ResponseHandler } from "@/interfaces/Response.interface";
+import { handleError } from "./handleError";
 
 export default async function fetcher<T>(
   url: string
-): Promise<ResponseFetcher<T>> {
-  const response: ResponseFetcher<T> = {
+): Promise<ResponseHandler<T>> {
+  let response: ResponseHandler<T> = {
     error: null,
-    data: null,
+    data: {} as T,
   };
 
   try {
@@ -18,13 +16,13 @@ export default async function fetcher<T>(
       throw new Error(`HTTP error! status: ${res.status}`);
     }
 
-    response.data = (await res.json()) as T;
+    const data: ResponseHandler<T> = await res.json();
+
+    response = { ...data };
+
+    return response;
   } catch (err) {
-    const errorMessage =
-      err instanceof Error ? err.message : "Something went wrong";
-
-    response.error = errorMessage;
+    response.error = handleError(err);
+    return response;
   }
-
-  return response;
 }

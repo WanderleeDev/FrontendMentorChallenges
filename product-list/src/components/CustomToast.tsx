@@ -4,7 +4,7 @@ interface Props {
 
 export default function CustomToast({ message }: Props) {
   return (
-    <figure className="flex flex-col gap-4 rounded-xl p-4 bg-background max-w-sm w-full shadow-md shadow-text-clr-primary border-[.1rem] border-text-clr-primary-light">
+    <figure className="flex flex-col gap-4 rounded-xl p-4 bg-background sm:w-[23rem]  shadow-md shadow-text-clr-primary border-[.1rem] border-text-clr-primary-light">
       <figcaption>
         <svg height="25" width="175" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="nonzero">
@@ -41,7 +41,7 @@ export default function CustomToast({ message }: Props) {
         </svg>
         <span className="sr-only">Front End Mentor</span>
       </figcaption>
-      <div className="bg-re bg-accent-clr-light py-2 px-4 rounded-lg text-white">
+      <div className="bg-re bg-accent-clr-light py-2 px-4 rounded-lg text-white font-semibold text-sm">
         {message}
       </div>
     </figure>

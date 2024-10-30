@@ -1,6 +1,38 @@
 {
   "home": {
     "welcome": "Welcome to our product list",
-    "product": "Product"
+    "product": "Product",
+    "title": "Desserts"
+  },
+  "myProducts": {
+    "title": "Your Cart",
+    "footer": "Order total",
+    "tag": {
+      "first": "This is a",
+      "strong": "carbon-neutral",
+      "last": "delivery"
+    },
+    "button": "Confirm Order",
+    "empty": "Your added items will appear here",
+    "alt": "View product",
+    "remove": "Remove product",
+    "btnAdd": "Add to cart",
+    "increase": "Increase quantity",
+    "decrease": "Decrease quantity",
+    "toaster": {
+      "remove": "removed from cart",
+      "add": "added to cart",
+      "limit": "Stock limit reached",
+      "invalid": "Operation invalid"
+    }
+  },
+  "product": {
+    "category": "Category",
+    "back": "Back to list"
+  },
+  "paymentConfirm": {
+    "title": "Order Confirmed",
+    "info": "We hope you enjoyed your food!",
+    "button": "Start New Order "
   }
 }

@@ -1,11 +1,13 @@
-import { ButtonHTMLAttributes } from "react";
+import { ComponentProps } from "react";
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  onClick?: () => void
-}
+type ButtonProps = ComponentProps<"button">;
 
-export default function ButtonBase({ children, onClick, type, ...props }: Props) {
+export default function ButtonBase({
+  children,
+  onClick,
+  type,
+  ...props
+}: ButtonProps) {
   return (
     <button onClick={onClick} type={type || "button"} {...props}>
       {children}

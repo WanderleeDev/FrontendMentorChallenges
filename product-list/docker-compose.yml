@@ -1,0 +1,68 @@
+# Versión de Docker Compose - usar 3.x para características modernas
+version: "3.1"
+
+services:
+  # Servicio principal de MongoDB - Servidor de base de datos
+  mongo-server:
+    image: mongo:latest
+    container_name: mongo-server
+    restart: always # Reinicia automáticamente si el contenedor falla
+    environment:
+      # Credenciales del usuario root de MongoDB
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS}
+      MONGO_INITDB_DATABASE: products_db
+      MONGO_INITDB_REPLICA_SET_NAME: rs0 # Nombre del Replica Set
+    ports:
+      # Mapeo de puertos - puerto_host:puerto_contenedor
+      - "27017:27017"
+    volumes:
+      # Persistencia de datos - mapea el volumen nombrado a /data/db en el contenedor
+      - mongodb_data:/data/db
+      - ./init-replica.sh:/docker-entrypoint-initdb.d/init-replica.sh
+      - ./mongodb-keyfile:/mongodb-keyfile:ro # Monta el archivo de clave
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /mongodb-keyfile --auth # Usa el archivo de clave
+    networks:
+      # Red personalizada para comunicación entre contenedores
+      - monodb_network
+
+  # Servicio de interfaz web para MongoDB - Mongo Express
+  mongo-client:
+    image: mongo-express:latest
+    container_name: mongo-client
+    restart: always
+    # Asegura que mongo-server esté disponible antes de iniciar
+    depends_on:
+      - mongo-server
+    environment:
+      # Credenciales de administrador para MongoDB
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USER}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_PASS}
+      # Configuración de conexión al servidor MongoDB
+      ME_CONFIG_MONGODB_SERVER: mongo-server
+      ME_CONFIG_MONGODB_PORT: ${MONGODB_PORT}
+      # Credenciales para acceder a la interfaz web de Mongo Express
+      ME_CONFIG_BASICAUTH_USERNAME: ${CLIENT_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${CLIENT_PASSWORD}
+      # URL completa de conexión a MongoDB
+      ME_CONFIG_MONGODB_URL: mongodb://${MONGO_USER}:${MONGO_PASS}@mongo-server:${MONGODB_PORT}/
+    ports:
+      # Puerto para acceder a la interfaz web de Mongo Express
+      - "8081:8081"
+    networks:
+      - monodb_network
+
+# Definición de volúmenes persistentes
+volumes:
+  # Volumen nombrado para almacenar datos de MongoDB
+  mongodb_data:
+    # El driver por defecto es 'local'
+    # Puedes especificar otros drivers como:
+    # driver: local
+
+# Definición de redes personalizadas
+networks:
+  # Red dedicada para la comunicación entre MongoDB y Mongo Express
+  monodb_network:
+    # Por defecto usa el driver 'bridge'
+    # driver: bridge

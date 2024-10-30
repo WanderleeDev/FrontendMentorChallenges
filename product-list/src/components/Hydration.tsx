@@ -1,10 +1,10 @@
 "use client";
 
-import * as React from "react";
 import { useShoppingCart } from "@/modules/shoppingCart/store";
+import { useEffect } from "react";
 
 const Hydration = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     useShoppingCart.persist.rehydrate();
   }, []);
 

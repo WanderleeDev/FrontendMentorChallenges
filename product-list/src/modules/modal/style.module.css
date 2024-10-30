@@ -1,0 +1,16 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  gap: 2rem;
+  place-content: center;
+  background-color: rgb(0 0 0 / 0.2);
+  z-index: 20;
+  backdrop-filter: blur(0.8rem);
+
+  & .modal {
+    display: grid;
+    place-content: center;
+    place-items: center;
+  }
+}

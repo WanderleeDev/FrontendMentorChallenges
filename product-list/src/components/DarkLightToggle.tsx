@@ -15,7 +15,7 @@ export default function DarkLightToggle() {
   if (!mounted) {
     return (
       <CgDarkMode
-        className="size-9 cursor-pointer"
+        className="size-7 cursor-pointer md:size-9"
         title="loading theme"
         ria-hidden="true"
       />
@@ -25,7 +25,7 @@ export default function DarkLightToggle() {
   if (resolvedTheme === "dark") {
     return (
       <FiSun
-        className="size-9 cursor-pointer"
+        className="size-7 cursor-pointer md:size-9"
         title={alt}
         onClick={() => setTheme("light")}
       />
@@ -35,7 +35,7 @@ export default function DarkLightToggle() {
   if (resolvedTheme === "light") {
     return (
       <FiMoon
-        className="size-9 cursor-pointer"
+        className="size-7 cursor-pointer md:size-9"
         title={alt}
         onClick={() => setTheme("dark")}
       />

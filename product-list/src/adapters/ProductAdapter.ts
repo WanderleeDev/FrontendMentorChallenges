@@ -9,5 +9,6 @@ export function adapterProductItem({
     name: product.name,
     price: product.price,
     quantity: quantity,
+    thumbnail: product.image.thumbnail
   };
 }

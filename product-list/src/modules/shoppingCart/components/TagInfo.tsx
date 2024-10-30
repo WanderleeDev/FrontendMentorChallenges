@@ -1,4 +1,8 @@
+import { useTranslations } from "next-intl";
+
 export default function TagInfo() {
+  const t = useTranslations('myProducts')
+
   return (
     <div className="flex gap-2 items-center justify-center bg-background p-4 rounded-lg mb-4">
       <svg
@@ -18,7 +22,7 @@ export default function TagInfo() {
         />
       </svg>
       <p>
-        This is a <strong>carbon-neural</strong> delivery
+        {t('tag.first')} <strong>{t('tag.strong')}</strong> {t('tag.last')}
       </p>
     </div>
   );

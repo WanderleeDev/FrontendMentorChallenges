@@ -1,4 +1,6 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface ModalContextType {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
+  state: boolean;
+  setState: Dispatch<SetStateAction<boolean>>;
 }

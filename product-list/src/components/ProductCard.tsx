@@ -1,15 +1,17 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import { Product } from "@/models/Product.models";
+import { ProductTranslation } from "@/models/Product.models";
 import { formattingPrice } from "@/utils/formatterPrice";
 import dynamic from "next/dynamic";
+import { useTranslations } from "next-intl";
 
 interface Props {
-  product: Product;
+  product: ProductTranslation;
 }
 
 export default function ProductCard({ product }: Props) {
   const { name, category, price, image, id } = product;
+  const t = useTranslations("myProducts");
   const PurchaseButton = dynamic(
     () => import("@/modules/shoppingCart/components/PurchaseButton"),
     { ssr: false }
@@ -26,7 +28,7 @@ export default function ProductCard({ product }: Props) {
             className="rounded-lg aspect-square size-48 object-cover bg-gray-300 w-full h-full"
             src={image.tablet}
             alt={name}
-            title="view product"
+            title={t("alt")}
             width={192}
             height={192}
           />

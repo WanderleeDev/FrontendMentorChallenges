@@ -1,6 +1,38 @@
 {
   "home": {
     "welcome": "Bienvenido a nuestra lista de productos",
-    "product": "Producto"
+    "product": "Producto",
+    "title": "Postres"
+  },
+  "myProducts": {
+    "title": "Tu Carrito",
+    "footer": "Total del pedido",
+    "tag": {
+      "first": "Este es un envío",
+      "strong": "neutro en carbono",
+      "last": ""
+    },
+    "button": "Confirmar Pedido",
+    "empty": "Tus elementos agregados aparecerán aquí",
+    "alt": "Ver producto",
+    "remove": "Remover producto",
+    "btnAdd": "Agregar al carrito",
+    "increase": "Incrementar cantidad",
+    "decrease": "Disminuir cantidad",
+    "toaster": {
+      "remove": "se removido del carrito",
+      "add": "se agrega al carrito",
+      "limit": "Stock limite alcanzado",
+      "invalid": "Operación invalida"
+    }
+  },
+  "product": {
+    "category": "categoría",
+    "back": "Volver a la lista"
+  },
+  "paymentConfirm": {
+    "title": "Pedido Confirmado",
+    "info": "¡Esperamos que hayas disfrutado tu comida!",
+    "button": "Iniciar Nuevo Pedido"
   }
 }
